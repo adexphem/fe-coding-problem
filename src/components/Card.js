@@ -54,7 +54,7 @@ const PriceWrapper = styled.div`
 const Bar = styled.div`
   height: 7px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 11px;
   background-color: ${colors.grey_e0e0e0};
 `;
 
@@ -80,10 +80,14 @@ const props = {
 const Card = () => {
   const { image, title, currencySymbol, amount, status } = props;
 
+  const onResubmit = () => {
+    console.log("Resubmitting...");
+  };
+
   return (
     <Container>
       <StyledImage>
-        <img src={image} />
+        <img src={image} alt={title} />
       </StyledImage>
 
       <StyledDescription>
@@ -98,7 +102,7 @@ const Card = () => {
       </StyledDescription>
 
       <Footer>
-        <CardFooter />
+        <CardFooter onResubmit={onResubmit} />
       </Footer>
     </Container>
   );

@@ -15,7 +15,7 @@ export default {
 
   medium: "#6e6969",
   light: "#f8f4f4",
-  danger: "#FB0100",
+  danger: "#F70700",
   dark: "#0c0c0c",
   orange: "#FFA041",
   green: "#11C121",
