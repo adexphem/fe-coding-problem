@@ -17,10 +17,10 @@ const StyledIcon = styled(FaList)`
   margin: 0 10px 0 20px;
 `;
 
-const NavStatus = ({ status = "pending" }) => {
+const NavStatus = ({ value = "pending" }) => {
   return (
     <Container>
-      <StyledIcon color={status} /> {status}
+      <StyledIcon color={value} /> {value}
     </Container>
   );
 };

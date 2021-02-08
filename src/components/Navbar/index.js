@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import filters from "../../data/filters.json";
@@ -14,11 +14,13 @@ const ItemWrapper = styled.div`
 `;
 
 const Navbar = () => {
+  const [filterValue, setFilterValue] = useState('all');
   const options = ["All Campaigns"].concat(filters);
   const defaultOption = options[0];
 
   const onSelect = (e) => {
-    console.log("e ", e);
+    const { value } = e;
+    setFilterValue(value);
   };
 
   return (
@@ -26,7 +28,7 @@ const Navbar = () => {
       <Nav>
         <ItemWrapper>
           <StyledDropdown options={options} onChange={onSelect} value={defaultOption} placeholder="Select an option" />
-          <NavStatus />
+          <NavStatus value={filterValue} />
         </ItemWrapper>
         <Bars />
         <NavMenu>

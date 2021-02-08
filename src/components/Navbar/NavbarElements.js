@@ -43,6 +43,12 @@ export const StyledDropdown = styled(Dropdown)`
     border-color: ${colors.grey_e6e6e6};
     color: ${colors.black};
   }
+
+  .Dropdown-menu {
+    .Dropdwon-option {
+      text-transform: capitalize;
+    }
+  }
 `;
 
 export const Bars = styled(FaBars)`

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { FaList } from "react-icons/fa";
 
 import colors from "../../config/colors";
 
