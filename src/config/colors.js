@@ -4,6 +4,7 @@ export default {
   grey_e6e6e6: "#e6e6e6",
   grey_b1b1b1: "#B1B1B1",
   grey_dfdfdf: "#DFDFDF",
+  grey_dcdcdc: "#DCDCDC",
   grey_c5c5c5: "#C5C5C5",
   grey_ededed: "#EDEDED",
   grey_e0e0e0: "#E0E0E0",

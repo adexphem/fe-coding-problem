@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import PriceSlashDuration from "./PriceSlashDuration";
+import PriceSlashDuration from "../PriceSlashDuration";
 import CardFooter from "./CardFooter";
-import Status from "./Status";
-import colors from "../config/colors";
-import { TwoLineClamp } from "./Clamp";
+import Status from "../Status";
+import colors from "../../config/colors";
+import { TwoLineClamp } from "../Clamp";
 
 const Container = styled.div`
   display: flex;

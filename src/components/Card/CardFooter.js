@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaEye, FaUserFriends, FaDatabase } from "react-icons/fa";
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 const Container = styled.div`
   display: flex;
@@ -54,24 +54,25 @@ const CardOnHold = ({ onResubmit }) => {
   );
 };
 
-const CardMini = () => {
+const CardMini = ({ likes = 2, views = 10, shares = 2333 }) => {
   return (
     <SpreadWrapper>
       <CardIcon>
-        <FaDatabase />
-        $12,000
+        <FaDatabase />${shares}
       </CardIcon>
       <CardIcon>
-        <FaUserFriends /> 400
+        <FaUserFriends /> {likes}
       </CardIcon>
       <CardIcon>
-        <FaEye /> 400
+        <FaEye /> {views}
       </CardIcon>
     </SpreadWrapper>
   );
 };
 
-const CardFooter = ({ status = "pending", isOnHold = false, onResubmit }) => {
+const CardFooter = ({ status = "pending", blank = false, isOnHold = false, onResubmit }) => {
+  if (blank) return null;
+
   return <Container>{isOnHold ? <CardOnHold onResubmit={onResubmit} /> : <CardMini />}</Container>;
 };
 
