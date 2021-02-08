@@ -14,8 +14,8 @@ const Container = styled.div`
 `;
 
 const StyledIcon = styled.span`
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   margin-left: 5px;
   background-color: ${({ color }) => (color ? statuses[`${color}`] : "red")};
