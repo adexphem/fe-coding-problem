@@ -73,8 +73,8 @@ const Footer = styled.div`
 
 const Card = ({ data }) => {
   const { primaryMediaUrl, cardTitle, cardDescription, currentWorkflow, listOfPlans, likes, views, shares } = data;
-  const plansCount = listOfPlans.length;
-  const { currencySymbol, amount } = listOfPlans[plansCount - 1].price;
+  const plansCount = listOfPlans ? listOfPlans.length : 1;
+  const { currencySymbol = "$", amount = "0.00" } = listOfPlans ? listOfPlans[plansCount - 1].price : {};
 
   const onResubmit = () => {
     console.log("Resubmitting...");

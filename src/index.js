@@ -1,14 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import App from "./App";
-import CampaignContext from "./context/CampaignContext";
+import { Provider } from "./GlobalState";
+import reducer, { initialState } from "./reducer";
 import * as serviceWorker from "./serviceWorker";
+
+const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider initialState={initialState} reducer={reducer}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  rootElement
 );
 
 // If you want your app to work offline and load faster, you can change

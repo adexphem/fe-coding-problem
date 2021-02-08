@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
+import { GlobalStateValue } from "../GlobalState";
 import Card from "../components/Card/Card";
 import EmptyCard from "../components/Card/EmptyCard";
-import cards from "../data/cards.json";
 
 const Container = styled.div`
   display: flex;
@@ -29,11 +29,18 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const [{ response }, dispatch] = GlobalStateValue();
+
+  useEffect(() => {
+    dispatch({
+      type: "GET_CARDS",
+    });
+  }, [dispatch]);
+
   return (
     <>
       <Container>
-        <EmptyCard />
-        {cards && cards.map((item, index) => <Card key={`${item.campaignId}_${index}`} data={item} />)}
+        {response && response.map((item, index) => <Card key={`${item.campaignId}_${index}`} data={item} />)}
         <EmptyCard />
       </Container>
     </>
