@@ -13,8 +13,18 @@ const Container = styled.div`
   justify-content: flex-start;
   padding: 30px 0;
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 270px;
+  }
+
   > div {
     margin: 0 30px 30px 0;
+
+    @media screen and (max-width: 768px) {
+      margin: 0 0 30px 0;
+    }
   }
 `;
 

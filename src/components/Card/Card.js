@@ -6,6 +6,7 @@ import CardFooter from "./CardFooter";
 import Status from "../Status";
 import colors from "../../config/colors";
 import { TwoLineClamp } from "../Clamp";
+import { statuses } from "../../config/constants";
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ const Bar = styled.div`
   height: 7px;
   width: 100%;
   margin-top: 11px;
-  background-color: ${colors.grey_e0e0e0};
+  background-color: ${({ status }) => (status === "live" ? statuses.saved : colors.grey_e0e0e0)};
 `;
 
 const Footer = styled.div`
@@ -93,7 +94,7 @@ const Card = ({ data }) => {
           <Status status={currentWorkflow} />
         </PriceWrapper>
 
-        <Bar />
+        <Bar status={currentWorkflow} />
       </StyledDescription>
 
       <Footer>
