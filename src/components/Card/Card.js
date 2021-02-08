@@ -43,6 +43,7 @@ const Container = styled.div`
 
             &:hover {
               background-color: ${colors.grey_f6f6f6};
+              color: ${colors.black};
             }
           }
         }

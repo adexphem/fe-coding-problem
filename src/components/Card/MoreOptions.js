@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaEdit, FaRegCheckCircle, FaShareAlt } from "react-icons/fa";
+import { FaEdit, FaRegCheckCircle, FaShareAlt, FaTrashAlt } from "react-icons/fa";
 
 import colors from "../../config/colors";
 
@@ -21,35 +21,41 @@ const Container = styled.div`
 const StyledUl = styled.ul`
   list-style-type: none;
   display: none;
+  box-shadow: rgb(0 0 0 / 10%) 10px 10px 20px -10px;
 `;
 
 const StyledLi = styled.li`
+  color: ${colors.grey_b1b1b1};
+  
   svg {
     margin-right: 10px;
   }
 `;
 
-const Options = () => {
+const Options = ({ onItemClick }) => {
   return (
     <StyledUl>
-      <StyledLi>
+      <StyledLi onClick={onItemClick}>
         <FaEdit /> Edit
       </StyledLi>
-      <StyledLi>
+      <StyledLi onClick={onItemClick}>
         <FaRegCheckCircle /> Publish
       </StyledLi>
-      <StyledLi>
+      <StyledLi onClick={onItemClick}>
         <FaShareAlt /> Share
+      </StyledLi>
+      <StyledLi onClick={onItemClick}>
+        <FaTrashAlt /> Delete
       </StyledLi>
     </StyledUl>
   );
 };
 
-const MoreOptions = () => {
+const MoreOptions = ({ onItemClick }) => {
   return (
     <Container>
       <FaEdit />
-      <Options />
+      <Options onItemClick={onItemClick} />
     </Container>
   );
 };
