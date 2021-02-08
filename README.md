@@ -1,6 +1,6 @@
 # Welcome to **frontend-coding-problem**!
 
-**frontend-web-app** is built using [ReactJS](https://reactjs.org/) which means it is a React includes includes powerful conventions, components and a build tool chain while also offering maximum extendability.
+**frontend-web-app** is built using [ReactJS](https://reactjs.org/) which means it is a React includes powerful conventions, components and a build tool chain while also offering maximum extendability.
 
 
 ## Local Development
