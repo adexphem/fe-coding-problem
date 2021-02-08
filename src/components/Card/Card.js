@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import PriceSlashDuration from "../PriceSlashDuration";
 import CardFooter from "./CardFooter";
+import MoreOptions from "./MoreOptions";
+
+import PriceSlashDuration from "../PriceSlashDuration";
 import Status from "../Status";
 import colors from "../../config/colors";
 import { TwoLineClamp } from "../Clamp";
@@ -17,6 +19,36 @@ const Container = styled.div`
   height: 327px;
   border: 1px solid ${colors.grey_ededed};
   box-shadow: rgb(0 0 0 / 10%) 10px 10px 20px -10px;
+  position: relative;
+
+  &:hover {
+    > div:first-child {
+      display: flex;
+      cursor: pointer;
+
+      &:hover {
+        > ul {
+          display: flex;
+          flex-direction: column;
+          background-color: ${colors.white};
+          position: absolute;
+          top: 20px;
+          right: 1px;
+
+          li {
+            padding: 8px 10px;
+            border-bottom: 1px solid ${colors.grey_e0e0e0};
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              background-color: ${colors.grey_f6f6f6};
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 const StyledImage = styled.div`
@@ -82,6 +114,7 @@ const Card = ({ data }) => {
 
   return (
     <Container>
+      <MoreOptions />
       <StyledImage>
         <img src={primaryMediaUrl} alt={cardTitle} />
       </StyledImage>

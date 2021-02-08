@@ -21,6 +21,7 @@ const reducer = (state, action) => {
 const filterByValue = (state = [], value) => {
   const response = [];
 
+  // eslint-disable-next-line
   state.find((item) => {
     if (item.currentWorkflow === value.toLowerCase()) {
       response.push(item);

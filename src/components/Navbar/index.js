@@ -15,6 +15,7 @@ const ItemWrapper = styled.div`
 `;
 
 const Navbar = () => {
+  // eslint-disable-next-line
   const [data, dispatch] = GlobalStateValue();
   const [filterValue, setFilterValue] = useState("all");
   const options = ["All Campaigns"].concat(filters);
