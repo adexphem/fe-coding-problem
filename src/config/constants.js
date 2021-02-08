@@ -9,4 +9,9 @@ export const statuses = {
   live: colors.green,
   rejected: colors.danger,
   active: colors.diamond,
+  paused: colors.grey_e0e0e0,
+  terminated: colors.terminated,
+  declined: colors.danger,
+  pending: colors.medium,
+  expired: colors.expired,
 };

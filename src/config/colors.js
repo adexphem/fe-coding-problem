@@ -21,4 +21,6 @@ export default {
   orange: "#FFA041",
   green: "#11C121",
   diamond: "#ECDE61",
+  terminated: "#6F3500",
+  expired: "#00116A",
 };

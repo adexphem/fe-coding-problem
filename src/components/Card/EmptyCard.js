@@ -39,14 +39,6 @@ const StyledText = styled.div`
   font-size: 16px;
 `;
 
-const props = {
-  image: "https://loremflickr.com/750/400",
-  title: "Create a site no Programming skills required in 2 weeks",
-  currencySymbol: "$",
-  amount: "4500",
-  status: "active",
-};
-
 const Card = () => {
   const onCardCreate = () => {
     console.log("Resubmitting...");

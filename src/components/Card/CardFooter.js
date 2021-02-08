@@ -70,10 +70,14 @@ const CardMini = ({ likes = 2, views = 10, shares = 2333 }) => {
   );
 };
 
-const CardFooter = ({ status = "pending", blank = false, isOnHold = false, onResubmit }) => {
+const CardFooter = ({ status = "pending", blank = false, isOnHold = false, onResubmit, likes, views, shares }) => {
   if (blank) return null;
 
-  return <Container>{isOnHold ? <CardOnHold onResubmit={onResubmit} /> : <CardMini />}</Container>;
+  return (
+    <Container>
+      {isOnHold ? <CardOnHold onResubmit={onResubmit} /> : <CardMini likes={likes} views={views} shares={shares} />}
+    </Container>
+  );
 };
 
 export default CardFooter;

@@ -43,6 +43,7 @@ const StyledTitle = styled(TwoLineClamp)`
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
+  min-height: 48px;
   margin-bottom: 12px;
 `;
 
@@ -69,16 +70,11 @@ const Footer = styled.div`
   background-color: ${colors.light_grey};
 `;
 
-const props = {
-  image: "https://loremflickr.com/750/400",
-  title: "Create a site no Programming skills required in 2 weeks",
-  currencySymbol: "$",
-  amount: "4500",
-  status: "active",
-};
-
-const Card = () => {
-  const { image, title, currencySymbol, amount, status } = props;
+const Card = ({ data }) => {
+  console.log("data ", data);
+  const { primaryMediaUrl, cardTitle, cardDescription, currentWorkflow, listOfPlans, likes, views, shares } = data;
+  const plansCount = listOfPlans.length;
+  const { currencySymbol, amount } = listOfPlans[plansCount - 1].price;
 
   const onResubmit = () => {
     console.log("Resubmitting...");
@@ -87,22 +83,22 @@ const Card = () => {
   return (
     <Container>
       <StyledImage>
-        <img src={image} alt={title} />
+        <img src={primaryMediaUrl} alt={cardTitle} />
       </StyledImage>
 
       <StyledDescription>
-        <StyledTitle>{title}</StyledTitle>
+        <StyledTitle>{cardDescription}</StyledTitle>
 
         <PriceWrapper>
           <PriceSlashDuration currencySymbol={currencySymbol} amount={amount} />
-          <Status status={status} />
+          <Status status={currentWorkflow} />
         </PriceWrapper>
 
         <Bar />
       </StyledDescription>
 
       <Footer>
-        <CardFooter onResubmit={onResubmit} />
+        <CardFooter onResubmit={onResubmit} likes={likes} views={views} shares={shares} />
       </Footer>
     </Container>
   );
