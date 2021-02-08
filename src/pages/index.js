@@ -23,7 +23,8 @@ const Home = () => {
     <>
       <Container>
         <EmptyCard />
-        {cards && cards.map((item) => <Card key={item.id} data={item} />)}
+        {cards && cards.map((item, index) => <Card key={`${item.campaignId}_${index}`} data={item} />)}
+        <EmptyCard />
       </Container>
     </>
   );

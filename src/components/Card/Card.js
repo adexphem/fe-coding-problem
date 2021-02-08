@@ -71,7 +71,6 @@ const Footer = styled.div`
 `;
 
 const Card = ({ data }) => {
-  console.log("data ", data);
   const { primaryMediaUrl, cardTitle, cardDescription, currentWorkflow, listOfPlans, likes, views, shares } = data;
   const plansCount = listOfPlans.length;
   const { currencySymbol, amount } = listOfPlans[plansCount - 1].price;
